@@ -1,0 +1,138 @@
+/* 🌟 Fond avec dégradé animé */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 🎭 Animation du fond */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 📦 Conteneur avec effet verre */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 50%;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 🌀 Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🎛️ Champs de formulaire stylisés */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    color: white; /* ✅ Correction : Texte en blanc */
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+/* ✨ Placeholder et effet de focus */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ✅ Correction : Couleur du texte dans `select` */
+select {
+    color: black; /* ✅ Correction : Texte en noir pour être visible */
+    background: white; /* ✅ Fond blanc pour meilleure visibilité */
+    font-weight: bold;
+}
+
+/* ✅ Correction : Couleur du texte dans `input` */
+input[type="number"], input[type="text"] {
+    color: black; /* ✅ Correction : Texte en noir */
+    background: white; /* ✅ Fond blanc */
+}
+
+/* ✅ Effet de focus amélioré */
+input:focus, select:focus {
+    border: 2px solid #ffcc00;
+    background: rgba(255, 255, 255, 0.5);
+    color: black; /* ✅ Garde le texte visible */
+}
+
+/* 📷 Bouton pour sélectionner l'image */
+input[type="file"] {
+    border: none;
+    padding: 12px;
+    background: white;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+/* 🚀 Bouton animé */
+button {
+    background: #ffcc00;
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #ffeb3b;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(255, 235, 59, 0.3);
+}
+
+/* 💡 Effet de survol sur le conteneur */
+.container:hover {
+    transform: scale(1.03);
+}
+
+/* 🎯 Résultats animés */
+.result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.5s forwards 0.5s;
+}
+
+/* 🔄 Animation de montée */
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>🔍 Analyse de style</h1>
+
+  <!-- File Selection -->
+  <label for="fileInput">📂 Sélectionner une image :</label>
+  <input type="file" id="fileInput" (change)="onFileSelected($event)">
+
+  <!-- Image Preview -->
+  <div *ngIf="imagePreview">
+    <h3>🖼 Aperçu de l'image :</h3>
+    <img [src]="imagePreview" alt="Aperçu de l'image sélectionnée" class="preview-img">
+  </div>
+
+  <!-- Domain Selection -->
+  <label for="domainSelect">🧪 Domaine scientifique :</label>
+  <select id="domainSelect" [(ngModel)]="formData.domain" required>
+    <option value="" disabled selected>Choisir un domaine</option>
+    <option value="intelligence-artificielle">Intelligence Artificielle</option>
+    <option value="astronomie">Astronomie</option>
+    <option value="biotechnologie">Biotechnologie</option>
+  </select>
+
+  <!-- Send Button -->
+  <button (click)="sendImage()" [disabled]="!selectedFile || !formData.domain">
+    📤 Envoyer
+  </button>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error">
+    🚨 {{ errorMessage }}
+  </div>
+</div>
